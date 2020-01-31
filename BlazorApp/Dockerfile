@@ -1,6 +1,6 @@
-FROM nginx:alpine AS base
+FROM tobi312/rpi-nginx:alpine AS base
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS publish
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS publish
 WORKDIR /src
 
 COPY ["BlazorApp.csproj", ""]
