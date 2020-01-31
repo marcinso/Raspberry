@@ -4,4 +4,26 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<input type="text"  @onchange="OnChange" />
+<button @onclick="click">Copy</button>
+
+<p>Text: @text</p>
+<br />
+<br />
+<p> Text 2: @copyText</p>
+
+@code{
+
+    private string text;
+    private string copyText;
+    public void click()
+    {
+        copyText = text;
+    }
+
+    public void OnChange(ChangeEventArgs arg)
+    {
+        text = arg.Value.ToString();
+        this.StateHasChanged();
+    }
+}
